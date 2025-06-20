@@ -2,10 +2,11 @@ const p = document.querySelector("#count");
 const appenddiv = document.querySelector(".info");
 let time=0;
 let intervalid = null;
+// CODE FOR DIFFRENT TIME FUNCTION
 const starttime = () =>{
     if (intervalid !== null) return;
     intervalid = setInterval(()=>{
-        let itime = time++;
+        let itime = ++time;
         p.innerHTML = itime;
     },1000)
 }
@@ -29,8 +30,7 @@ const cleartime = () =>{
 const refresh = () =>{
     location.reload();
 }
-starttime();
-resettime();
+// CODE FOR EVENT WHEN BUTTON ARE CLICKED
 document.querySelector("#start").addEventListener("click", starttime);
 document.querySelector("#stop").addEventListener("click", stoptime);
 document.querySelector("#reset").addEventListener("click", resettime);
